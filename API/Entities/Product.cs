@@ -7,7 +7,7 @@ namespace API.Entities
 {
     public class Product
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // if we use any other naming convesion here instead of Id then the Entity will not reconise a primary key field it will probably going to give an error  
 
         public string Name { get; set; }
 
