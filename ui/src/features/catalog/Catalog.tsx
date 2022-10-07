@@ -5,18 +5,18 @@ interface Props{
     addProduct: () => void;
 }
 
-export default function Catalog(props : Props) {
+export default function Catalog({products, addProduct} : Props) {
     return (
         <>
             <h1>Catalog</h1>
             <ul>
                 {
-                    props.products.map((product) => (
+                    products.map((product) => (
                         <li key={product.id}>{product.name}</li>
                     ))
                 }
             </ul>
-            <button onClick={props.addProduct}>add product</button>
+            <button onClick={addProduct}>add product</button>
         </>
 
     )
