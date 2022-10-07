@@ -1,4 +1,6 @@
+import { Button } from "@mui/material";
 import { Product } from "../../app/model/product"
+import ProductList from "./ProductList";
 
 interface Props{
     products: Product[];
@@ -9,15 +11,8 @@ export default function Catalog({products, addProduct} : Props) {
     return (
         <>
             <h1>Catalog</h1>
-            <ul>
-                {
-                    products.map((product) => (
-                        <li key={product.id}>{product.name}</li>
-                    ))
-                }
-            </ul>
-            <button onClick={addProduct}>add product</button>
+            <ProductList products={products} />
+            <Button variant="contained" onClick={addProduct}>Add Product</Button>
         </>
-
     )
 }
