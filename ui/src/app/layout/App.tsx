@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Product } from "./product";
+import { Product } from "../model/product";
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
        <ul>
         {
           products.map((product) => (
-            <li key={product.id}>{product.name}</li>
+            <li key={product.id}>{product.brand}</li>
           ))
         }
        </ul>
