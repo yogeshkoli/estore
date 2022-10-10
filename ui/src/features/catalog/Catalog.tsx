@@ -27,6 +27,7 @@ export default function Catalog() {
     return (
         <>
             <ProductList products={products} />
+            <br></br>
             <Button variant="contained" onClick={addProduct}>Add Product</Button>
         </>
     )
