@@ -10,7 +10,7 @@ export default function ServerError()
             {
                 state?.error ? (
                     <>
-                        <Typography variant="h5" gutterBottom>Server Error</Typography>
+                        <Typography variant="h5" gutterBottom color='error'>{state.error.title}</Typography>
                         <Divider />
                         <Typography>
                             {
@@ -20,7 +20,7 @@ export default function ServerError()
                     </>
                 ) : <Typography variant="h5" gutterBottom>Server Error</Typography>
             }
-            <Button component={Link} to="/catalog">Go back to the store</Button>
+            <Button fullWidth component={Link} to="/catalog">Go back to the store</Button>
         </Container>
     )
 }

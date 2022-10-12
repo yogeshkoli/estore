@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Product } from "../../app/model/product"
 import { Divider, Grid, TableBody, Table, TableContainer, Typography, TableCell, TableRow } from "@mui/material";
 import agent from "../../app/api/agent";
+import NotFound from "../../app/errors/NotFound";
 
 export default function ProductDetails(){
 
@@ -19,11 +20,11 @@ export default function ProductDetails(){
 
     if(loading) return <h3>Loading ....</h3>
 
-    if(!product) return <h3>Product not found</h3>
+    if(!product) return <NotFound />
 
 
     return(
-        <Grid container spacing={6}>
+        <Grid container spacing={6}> 
             <Grid item xs={6}>
                 <img src={product.pictureUrl} alt={product.name} style={{width: '100%'}} />
             </Grid>
