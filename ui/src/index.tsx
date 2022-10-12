@@ -14,12 +14,13 @@ import ProductDetails from './features/catalog/ProductDetails';
 import HomePage from './features/home/HomePage';
 import LoginPage from './features/login/LoginPage';
 import RegisterPage from './features/register/RegisterPage';
+import ServerError from './app/errors/ServerError';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <RegisterPage />,
+      },
+      {
+        path: "server-error",
+        element: <ServerError />,
       },
     ],
   } 

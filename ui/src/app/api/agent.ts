@@ -1,5 +1,6 @@
-import axios, {AxiosError, AxiosResponse} from 'axios';
+import axios, {AxiosResponse} from 'axios';
 import { toast } from 'react-toastify';
+import { router } from '../..';
 
 axios.defaults.baseURL = 'http://localhost:5000/api/';
 
@@ -30,10 +31,7 @@ axios.interceptors.response.use(response => {
             toast.error(data.title);
             break;
         case 500:
-            toast.error(data.title);
-            break;
-        case 500:
-            toast.error(data.title);
+            router.navigate('/server-error');
             break;
     
         default:
