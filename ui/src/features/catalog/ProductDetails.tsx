@@ -4,6 +4,7 @@ import { Product } from "../../app/model/product"
 import { Divider, Grid, TableBody, Table, TableContainer, Typography, TableCell, TableRow } from "@mui/material";
 import agent from "../../app/api/agent";
 import NotFound from "../../app/errors/NotFound";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 export default function ProductDetails(){
 
@@ -18,7 +19,7 @@ export default function ProductDetails(){
         .finally(() => setLoading(false));
     }, [id]);
 
-    if(loading) return <h3>Loading ....</h3>
+    if(loading) return <LoadingComponent message="Loading details..." />
 
     if(!product) return <NotFound />
 
